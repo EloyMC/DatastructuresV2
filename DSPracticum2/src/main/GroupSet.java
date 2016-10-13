@@ -23,7 +23,7 @@ public class GroupSet {
     public static int groupsPerRoute = 0;
     public static int totalGroups = 0;
     public static int studentsPerRoute = 0;
-
+    public static int amountCompared = 0;
     private int totalStudents = 0;
     private Group[] groups;
     private List<Student> students = new ArrayList();
@@ -73,9 +73,7 @@ public class GroupSet {
                 }
                 groups[i] = new Group("I" + route[routeCurrent++] + (GROUP_START + groupNum));
             }
-            System.out.println(Arrays.toString(groups));
 
-            System.out.println("");
             System.out.println("Total students: " + totalStudents);
             System.out.println("Students per route: " + studentsPerRoute);
             System.out.println("Groups per route: " + groupsPerRoute);
@@ -88,4 +86,18 @@ public class GroupSet {
         return groups;
     }
 
+     public void sortByGrade(List<Student> students) {
+        for (int i = 0; i < students.size() - 1; i++) {
+            
+            for (int k = i + 1; k < students.size(); k++) {
+                // Compare left to right, not right to left.
+                amountCompared++;
+                if (students.get(i).getGrade() < students.get(k).getGrade()) {
+                    Student temp = students.get(i);
+                    students.set(i, students.get(k));
+                    students.set(k, temp);
+                }
+            }
+        }
+    }
 }

@@ -3,16 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/C:/Users/Astrophe/Documents/GitHub/DataStructures/DSPracticum2/src/model/Student.java</file>
             <file>file:/C:/Users/Astrophe/Documents/GitHub/DataStructures/DSPracticum2/src/main/GroupSet.java</file>
+            <file>file:/C:/Users/Astrophe/Documents/GitHub/DataStructures/DSPracticum2/src/sort/GroupComparator.java</file>
+            <file>file:/C:/Users/Astrophe/Documents/GitHub/DataStructures/DSPracticum2/src/sort/StudentNoComparator.java</file>
             <file>file:/C:/Users/Astrophe/Documents/GitHub/DataStructures/DSPracticum2/src/main/Main.java</file>
             <file>file:/C:/Users/Astrophe/Documents/GitHub/DataStructures/DSPracticum2/src/model/Group.java</file>
-=======
-            <file>file:/C:/Users/Serdar/Documents/GitHub/Datastructures/DSPracticum2/src/main/GroupSet.java</file>
-            <file>file:/C:/Users/Serdar/Documents/GitHub/Datastructures/DSPracticum2/src/model/Group.java</file>
-            <file>file:/C:/Users/Serdar/Documents/GitHub/Datastructures/DSPracticum2/src/main/Main.java</file>
->>>>>>> Added group and studentno comparator
         </group>
     </open-files>
 </project-private>

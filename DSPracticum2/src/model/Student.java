@@ -16,10 +16,15 @@ public class Student implements Comparator<Student> {
 
     public static int studentNumStart = 50060000;
     private static final SecureRandom SEC = new SecureRandom();
+    public static int amountCompared = 0;
     
     private int studentNum;
     private Group group;
     private double grade;
+
+    public static SecureRandom getSEC() {
+        return SEC;
+    }
 
     public Student(Group group) {
         setStudentNum();
@@ -83,6 +88,7 @@ public class Student implements Comparator<Student> {
     
     @Override
     public int compare(Student a, Student b) {
+        amountCompared++;
         if (b.getGrade() > a.getGrade()) {
             return 1;
         } else if (b.getGrade() < a.getGrade()) {

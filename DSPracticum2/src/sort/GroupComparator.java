@@ -14,8 +14,10 @@ import model.Group;
  */
 public class GroupComparator implements Comparator<Group> {
     
+    public static int amountCompared = 0;
     @Override
     public int compare(Group a, Group b) {
+        amountCompared++;
         if (b.getGroupID().charAt(1) < a.getGroupID().charAt(1)) {
             return 1;
         } else if (b.getGroupID().charAt(1) > a.getGroupID().charAt(1)) {
