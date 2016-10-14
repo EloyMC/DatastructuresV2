@@ -13,8 +13,9 @@ import model.Group;
  * @author Serdar
  */
 public class GroupComparator implements Comparator<Group> {
-    
+
     public static int amountCompared = 0;
+
     @Override
     public int compare(Group a, Group b) {
         amountCompared++;
@@ -26,5 +27,5 @@ public class GroupComparator implements Comparator<Group> {
             return 0;
         }
     }
-    
+
 }

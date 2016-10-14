@@ -6,7 +6,6 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import model.Group;
 import model.Student;
@@ -39,12 +38,11 @@ public class GroupSet {
             if (groupIndex == groups.length) {
                 groupIndex = 0;
             }
-            Group realGroup = groups[groupIndex++];
-            Student s = new Student(realGroup);
+            Group currentGroup = groups[groupIndex++];
+            Student s = new Student(currentGroup);
             students.add(s);
-            realGroup.add(s);
+            currentGroup.add(s);
         }
-        
     }
 
     public List<Student> getStudents() {
@@ -73,7 +71,6 @@ public class GroupSet {
                 }
                 groups[i] = new Group("I" + route[routeCurrent++] + (GROUP_START + groupNum));
             }
-
             System.out.println("Total students: " + totalStudents);
             System.out.println("Students per route: " + studentsPerRoute);
             System.out.println("Groups per route: " + groupsPerRoute);
@@ -87,8 +84,8 @@ public class GroupSet {
     }
 
      public void sortByGrade(List<Student> students) {
+         
         for (int i = 0; i < students.size() - 1; i++) {
-            
             for (int k = i + 1; k < students.size(); k++) {
                 // Compare left to right, not right to left.
                 amountCompared++;

@@ -6,13 +6,12 @@
 package model;
 
 import java.security.SecureRandom;
-import java.util.Comparator;
 
 /**
  *
  * @author Serdar
  */
-public class Student implements Comparator<Student> {
+public class Student {
 
     public static int studentNumStart = 50060000;
     private static final SecureRandom SEC = new SecureRandom();
@@ -32,30 +31,6 @@ public class Student implements Comparator<Student> {
         this.group = group;
     }
 
-    public static String addSpecialization(int current) {
-        String special;
-        switch (current) {
-            case 1:
-                special = "B";
-                break;
-            case 2:
-                special = "G";
-                break;
-            case 3:
-                special = "N";
-                break;
-            case 4:
-                special = "S";
-                break;
-            case 5:
-                special = "T";
-                break;
-            default:
-                special = "B";
-        }
-        return special;
-    }
-
     public int getStudentNum() {
         return studentNum;
     }
@@ -66,10 +41,6 @@ public class Student implements Comparator<Student> {
 
     public Group getGroup() {
         return group;
-    }
-
-    public void setGroup(Group group) {
-        this.group = group;
     }
 
     public double getGrade() {
@@ -85,17 +56,4 @@ public class Student implements Comparator<Student> {
     public String toString() {
         return "Studentnr: " + studentNum + "\tGrade: " + grade + "\tGroup: " + group;
     }
-    
-    @Override
-    public int compare(Student a, Student b) {
-        amountCompared++;
-        if (b.getGrade() > a.getGrade()) {
-            return 1;
-        } else if (b.getGrade() < a.getGrade()) {
-            return -1;
-        } else {
-            return 0;
-        }
-    }
-
 }
