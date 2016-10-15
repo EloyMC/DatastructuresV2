@@ -48,10 +48,11 @@ public class GroupSet {
     public List<Student> getStudents() {
         return students;
     }
+    
 
     public void createGroups() {
         if (totalStudents <= 0) {
-            System.err.println("Because no humans.");
+            System.err.println("Failed to create groups, Because no humans were found..(╯°□°）╯︵ ┻━┻)");
         } else {
             studentsPerRoute = (int) Math.ceil(totalStudents / (double) ROUTE_MAX);
             groupsPerRoute = (int) Math.ceil((double) studentsPerRoute / MAX_SIZE);

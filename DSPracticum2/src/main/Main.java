@@ -24,7 +24,7 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        GroupSet gen = new GroupSet(160000);
+        GroupSet gen = new GroupSet(10000000);
         gen.createGroups(); // Create groups
         gen.createStudents(); // Create students + assign to group
 
@@ -44,18 +44,33 @@ public class Main {
 
         GroupComparator groupC = new GroupComparator();
         Arrays.sort(gen.getGroups(), groupC);
-
-        for (Group g : gen.getGroups()) {
-            StudentNoComparator compStudentNo = new StudentNoComparator();
-            Collections.sort(g, compStudentNo);
-// comparator to sort studentnr
+//
+//        for (Group g : gen.getGroups()) {
+//            StudentNoComparator compStudentNo = new StudentNoComparator();
+//            Collections.sort(g, compStudentNo);
+//            //comparator to sort studentnr
 //            for (int i = 0; i < g.size(); i++) {
-//                System.out.println(g.get(i));yyyy
+//                System.out.println(g.get(i));
 //            }
 //            System.out.println("STUDENTS PER GROUP: " + g.size());
+//
+//        }
 
-        }
-
+//        int[] gradeCount = new int[91];
+//        double[] gradeVar = new double[91];
+//        double grade = 1.0;
+//        for (int i = 0; i < gradeVar.length; i++) {
+//            gradeVar[i] = (double) Math.round(grade * 10) / 10d;
+//            grade += 0.1;
+//        }
+//        
+//        for (int i = 0; i < gen.getStudents().size(); i++) {
+//            gradeCount[(int) (gen.getStudents().get(i).getGrade() * 10) - 10]++;
+//
+//        }
+//        for(int i = 0; i < 91; i++){
+//            System.out.println(gradeVar[i] + ":\t" + gradeCount[i] + " times");
+//        }
         System.out.println("Amount of grade comparisons: " + Student.amountCompared);
         System.out.println("Amount of student comparisons: " + StudentNoComparator.amountCompared);
         System.out.println("Amount of group comparisons: " + GroupComparator.amountCompared);
