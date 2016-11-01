@@ -1,5 +1,8 @@
 package nl.hva.dmci.ict.datastructures;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 
 /**
@@ -14,7 +17,7 @@ public class GenerateStudents {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         StudentList students = new StudentList(10000);
         //System.out.println(students);
         int[] hashCount = new int[97];
@@ -37,6 +40,16 @@ public class GenerateStudents {
         }
         System.out.println(Arrays.toString(hashIndex));
         System.out.println(Arrays.toString(hashCount));
+        
+        try (BufferedWriter br = new BufferedWriter(new FileWriter("hashCount.csv"))) {
+            StringBuilder sb = new StringBuilder();
+            for (int element : hashCount) {
+                sb.append(element);
+                sb.append("\n");
+            }
+            
+            br.write(sb.toString());
+        }
     }
 
     public static int ldapHashCode(String ldap) {
