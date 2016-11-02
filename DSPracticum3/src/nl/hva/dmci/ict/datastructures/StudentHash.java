@@ -12,7 +12,7 @@ import java.util.Arrays;
  * @author Dennis Breuker
  * @author Nico Tromp
  */
-public class GenerateStudents {
+public class StudentHash {
 
     /**
      * @param args the command line arguments
@@ -31,17 +31,17 @@ public class GenerateStudents {
             }
             //System.out.println("LDAP real: " + s.getLdap());
             //System.out.println("Hascode: " + ldapHashCode(s.getLdap()));
-            System.out.println(ldapHashCode(students.getList()[i].getLdap()) + " - " + ldapHashCode(students.getList()[i].getLdap()) % 97);
+            //System.out.println(ldapHashCode(students.getList()[i].getLdap()) + " - " + ldapHashCode(students.getList()[i].getLdap()) % 97);
         }
 
         int[] hashIndex = new int[97];
         for (int i = 0; i < hashIndex.length; i++) {
             hashIndex[i] = i;
         }
-        System.out.println(Arrays.toString(hashIndex));
-        System.out.println(Arrays.toString(hashCount));
+        //System.out.println(Arrays.toString(hashIndex));
+        //System.out.println(Arrays.toString(hashCount));
         
-        try (BufferedWriter br = new BufferedWriter(new FileWriter("hashCount.csv"))) {
+        /*try (BufferedWriter br = new BufferedWriter(new FileWriter("hashCount.csv"))) {
             StringBuilder sb = new StringBuilder();
             for (int element : hashCount) {
                 sb.append(element);
@@ -49,7 +49,8 @@ public class GenerateStudents {
             }
             
             br.write(sb.toString());
-        }
+        }*/
+        System.out.println(ldapHashCode("nijl1") % 97);
     }
 
     public static int ldapHashCode(String ldap) {
