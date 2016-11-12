@@ -26,13 +26,14 @@ public class LinearProbing {
     public static void main(String[] args) {
         StudentList students = new StudentList(10000);
         //System.out.println(students);
-
+        //10.501, 11.701, 13.309, 15.401
+        int maxSize = 15401;
         // Create custom hash table, insert ldap, 
         Hashtable<Integer, Object> ht = new Hashtable();
-        int[] collisionCount = new int[97];
+        int[] collisionCount = new int[maxSize];
         
         for (int i = 0; i < students.getList().length; i++) {
-            int hashIndex = hash(students.getList()[i].getLdap()) % 97;
+            int hashIndex = hash(students.getList()[i].getLdap()) % maxSize;
             
             if (ht.containsKey(hashIndex)) { // First item has collision, create linkedlist
                 collisionCount[hashIndex]++;
